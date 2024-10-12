@@ -9,6 +9,7 @@
     }
 }
 
+
 .banner {
     position: relative;
     display: block;
@@ -60,6 +61,19 @@
         border-radius: $radius-default;
         transform: scale(1);
         transition: 800ms ease;
+    }
+}
+
+.one-column-banner .banner, .two-column-banner .banner{
+    > img {
+        width: 100%;
+        border-radius: $radius-default;
+        transform: scale(1);
+        transition: 800ms ease;
+        
+        object-fit: cover;
+        object-position: inherit;
+        height: 300px;
     }
 }
 
