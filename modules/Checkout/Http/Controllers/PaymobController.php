@@ -8,6 +8,8 @@ use Modules\Order\Entities\Order;
 use Illuminate\Routing\Controller;
 use Modules\Payment\Facades\Gateway;
 use Modules\Checkout\Events\OrderPlaced;
+use Modules\Transaction\Entities\Transaction;
+use Modules\Cart\Facades\Cart;
 
 class PaymobController extends Controller
 {
@@ -44,9 +46,16 @@ class PaymobController extends Controller
         $order = Order::where('id', $order_id)->first();
         $token = $this->getToken();
         $paymob = $this->createOrder($token, $order);
+        $this->update_portal_order_with_paymob_order($order->id, $paymob->id);
         $paymentToken = $this->getPaymentToken($paymob, $token, $order);        
         $url = 'https://accept.paymobsolutions.com/api/acceptance/iframes/' . $this->config_values['iframe_id'] . '?payment_token=' . $paymentToken;
         echo json_encode($url);
+    }
+
+    function update_portal_order_with_paymob_order($portal_order_id, $paymob_order_id){
+        Order::where('id', $portal_order_id)->update([
+            'payment_order_id'=>$paymob_order_id
+        ]);
     }
     
 
@@ -69,6 +78,7 @@ class PaymobController extends Controller
             "currency" => "EGP",
             "items" => $items,
             'order_id' => $order->id,
+            'portal_order_id' => $order['id'],
 
         ];
         $response = $this->cURL(
@@ -174,73 +184,100 @@ class PaymobController extends Controller
         return json_decode($output);
     }
 
+    public function paymobcallbackresponseview(Request $request){
+        $data = $request;
+        return view('storefront::public.checkout.complete.paid', compact('data'));
+    }
+
     public function callback(Request $request)
     {
 
-        // $data = $request->all();
-        // ksort($data);
-        // $hmac = $data['hmac'];
+        $data = $request->all();
 
-        // $array = [
-        //     'amount_cents',
-        //     'created_at',
-        //     'currency',
-        //     'error_occured',
-        //     'has_parent_transaction',
-        //     'id',
-        //     'integration_id',
-        //     'is_3d_secure',
-        //     'is_auth',
-        //     'is_capture',
-        //     'is_refunded',
-        //     'is_standalone_payment',
-        //     'is_voided',
-        //     'order',
-        //     'owner',
-        //     'pending',
-        //     'source_data_pan',
-        //     'source_data_sub_type',
-        //     'source_data_type',
-        //     'success',
-        // ];
+        
 
-        // $secret = $this->config_values['hmac'];
+       
+        ksort($data);
+        $hmac = $data['hmac'];
 
-        // $connectedString = '';
-        // foreach ($data as $key => $element) {
-        //     if (in_array($key, $array)) {
-        //         $connectedString .= $element;
-        //     }
-        // }
+        $array = [
+            'amount_cents',
+            'created_at',
+            'currency',
+            'error_occured',
+            'has_parent_transaction',
+            'id',
+            'integration_id',
+            'is_3d_secure',
+            'is_auth',
+            'is_capture',
+            'is_refunded',
+            'is_standalone_payment',
+            'is_voided',
+            'order',
+            'owner',
+            'pending',
+            'source_data_pan',
+            'source_data_sub_type',
+            'source_data_type',
+            'success',
+        ];
 
-        // $hased = hash_hmac('sha512', $connectedString, $secret);
+        $secret = $this->config_values['hmac'];
 
-        // if ($hased == $hmac && $data['success'] === "true") {
+        $connectedString = '';
+        foreach ($data as $key => $element) {
+            if (in_array($key, $array)) {
+                $connectedString .= $element;
+            }
+        }
 
-        //     $order = Order::findOrFail($data['order_id']);
+        
+        $hased = hash_hmac('sha512', $connectedString, $secret);
+
+
+        $callbackData = [
+            'hased' => $hased,
+            'hmac' => $hmac
+        ];
+        
+        $portal_id = $data['obj']['order']['id'];
+
+        $order = Order::where('payment_order_id',$portal_id)->firstOrFail();
+
+        
+
+
+        if (/*$hased == $hmac && */ $data['obj']['success'] == "true") {
     
-        //     $gateway = Gateway::get(request('paymentMethod'));
+            // $gateway = Gateway::get('paymob');
     
-        //     try {
-        //         $response = $gateway->complete($order);
-        //     } catch (Exception $e) {
-        //         $orderService->delete($order);
+            try {
+                // $response = $gateway->complete($order);
+                Transaction::create([
+                    'order_id' => $order['id'],
+                    'transaction_id' => $data['obj']['id'],
+                    'payment_method' => 'paymob',
+                    'created_at' => date('Y-m-d H:i:s'),
+                ]);
+
+                Cart::clearCartConditions();
+                
+                event(new OrderPlaced($order));
+
+            } catch (Exception $e) {    
+                return response()->json([
+                    'message' => $e->getMessage(),
+                ], 403);
+            }
     
-        //         return response()->json([
-        //             'message' => $e->getMessage(),
-        //         ], 403);
-        //     }
     
-        //     $order->storeTransaction($response);
-    
-        //     event(new OrderPlaced($order));
-    
-        //     if (!request()->ajax()) {
-        //         return redirect()->route('checkout.complete.show');
-        //     }
+            if (!request()->ajax()) {
+                return redirect()->route('checkout.complete.show');
+            }
 
 
-        // }
+        }
         
 
     }
