@@ -67,6 +67,38 @@ class Banner
         ];
     }
 
+    public static function getTwoColumnBanners1()
+    {
+        return [
+            'banner_1' => self::findByName('storefront_two_column_banners1_1'),
+            'banner_2' => self::findByName('storefront_two_column_banners1_2'),
+        ];
+    }
+
+    public static function getTwoColumnBanners2()
+    {
+        return [
+            'banner_1' => self::findByName('storefront_two_column_banners2_1'),
+            'banner_2' => self::findByName('storefront_two_column_banners2_2'),
+        ];
+    }
+
+    public static function getTwoColumnBanners3()
+    {
+        return [
+            'banner_1' => self::findByName('storefront_two_column_banners3_1'),
+            'banner_2' => self::findByName('storefront_two_column_banners3_2'),
+        ];
+    }
+
+    public static function getTwoColumnBanners4()
+    {
+        return [
+            'banner_1' => self::findByName('storefront_two_column_banners4_1'),
+            'banner_2' => self::findByName('storefront_two_column_banners4_2'),
+        ];
+    }
+
 
     public static function getThreeColumnBanners()
     {
@@ -81,5 +113,25 @@ class Banner
     public static function getOneColumnBanner()
     {
         return self::findByName('storefront_one_column_banner');
+    }
+
+    public static function getOneColumnBanner1()
+    {
+        return self::findByName('storefront_one_column_banner1');
+    }
+
+    public static function getOneColumnBanner2()
+    {
+        return self::findByName('storefront_one_column_banner2');
+    }
+
+    public static function getOneColumnBanner3()
+    {
+        return self::findByName('storefront_one_column_banner3');
+    }
+
+    public static function getOneColumnBanner4()
+    {
+        return self::findByName('storefront_one_column_banner4');
     }
 }

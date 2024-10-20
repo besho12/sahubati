@@ -40,14 +40,22 @@ class StorefrontTabs extends Tabs
             ->add($this->sliderBanners())
             ->add($this->threeColumnFullWidthBanners())
             ->add($this->featuredCategories())
-            ->add($this->productTabsOne())
-            ->add($this->topBrands())
-            ->add($this->flashSaleAndVerticalProducts())
             ->add($this->twoColumnBanners())
-            ->add($this->productGrid())
-            ->add($this->threeColumnBanners())
-            ->add($this->productTabsTwo())
             ->add($this->oneColumnBanner())
+            ->add($this->productTabsOne())
+            ->add($this->twoColumnBanners1())
+            ->add($this->oneColumnBanner1())
+            ->add($this->topBrands())
+            ->add($this->threeColumnBanners())
+            ->add($this->twoColumnBanners2())
+            ->add($this->oneColumnBanner2())
+            ->add($this->flashSaleAndVerticalProducts())
+            ->add($this->twoColumnBanners3())
+            ->add($this->oneColumnBanner3())
+            ->add($this->productTabsTwo())
+            ->add($this->twoColumnBanners4())
+            ->add($this->oneColumnBanner4())
+            ->add($this->productGrid())
             ->add($this->blogs());
     }
 
@@ -311,9 +319,49 @@ class StorefrontTabs extends Tabs
     private function twoColumnBanners()
     {
         return tap(new Tab('two_column_banners', trans('storefront::storefront.tabs.two_column_banners')), function (Tab $tab) {
-            $tab->weight(65);
+            $tab->weight(40);
             $tab->view('storefront::admin.storefront.tabs.two_column_banners', [
                 'banners' => Banner::getTwoColumnBanners(),
+            ]);
+        });
+    }
+
+    private function twoColumnBanners1()
+    {
+        return tap(new Tab('two_column_banners1', trans('storefront::storefront.tabs.two_column_banners1')), function (Tab $tab) {
+            $tab->weight(45);
+            $tab->view('storefront::admin.storefront.tabs.two_column_banners1', [
+                'banners' => Banner::getTwoColumnBanners1(),
+            ]);
+        });
+    }
+
+    private function twoColumnBanners2()
+    {
+        return tap(new Tab('two_column_banners2', trans('storefront::storefront.tabs.two_column_banners2')), function (Tab $tab) {
+            $tab->weight(50);
+            $tab->view('storefront::admin.storefront.tabs.two_column_banners2', [
+                'banners' => Banner::getTwoColumnBanners2(),
+            ]);
+        });
+    }
+
+    private function twoColumnBanners3()
+    {
+        return tap(new Tab('two_column_banners3', trans('storefront::storefront.tabs.two_column_banners3')), function (Tab $tab) {
+            $tab->weight(60);
+            $tab->view('storefront::admin.storefront.tabs.two_column_banners3', [
+                'banners' => Banner::getTwoColumnBanners3(),
+            ]);
+        });
+    }
+
+    private function twoColumnBanners4()
+    {
+        return tap(new Tab('two_column_banners4', trans('storefront::storefront.tabs.two_column_banners4')), function (Tab $tab) {
+            $tab->weight(80);
+            $tab->view('storefront::admin.storefront.tabs.two_column_banners4', [
+                'banners' => Banner::getTwoColumnBanners4(),
             ]);
         });
     }
@@ -336,7 +384,7 @@ class StorefrontTabs extends Tabs
     private function threeColumnBanners()
     {
         return tap(new Tab('three_column_banners', trans('storefront::storefront.tabs.three_column_banners')), function (Tab $tab) {
-            $tab->weight(75);
+            $tab->weight(50);
             $tab->view('storefront::admin.storefront.tabs.three_column_banners', [
                 'banners' => Banner::getThreeColumnBanners(),
             ]);
@@ -361,9 +409,49 @@ class StorefrontTabs extends Tabs
     private function oneColumnBanner()
     {
         return tap(new Tab('one_column_banner', trans('storefront::storefront.tabs.one_column_banner')), function (Tab $tab) {
-            $tab->weight(85);
+            $tab->weight(40);
             $tab->view('storefront::admin.storefront.tabs.one_column_banner', [
                 'banner' => Banner::getOneColumnBanner(),
+            ]);
+        });
+    }
+
+    private function oneColumnBanner1()
+    {
+        return tap(new Tab('one_column_banner1', trans('storefront::storefront.tabs.one_column_banner1')), function (Tab $tab) {
+            $tab->weight(45);
+            $tab->view('storefront::admin.storefront.tabs.one_column_banner1', [
+                'banner' => Banner::getOneColumnBanner1(),
+            ]);
+        });
+    }
+
+    private function oneColumnBanner2()
+    {
+        return tap(new Tab('one_column_banner2', trans('storefront::storefront.tabs.one_column_banner2')), function (Tab $tab) {
+            $tab->weight(50);
+            $tab->view('storefront::admin.storefront.tabs.one_column_banner2', [
+                'banner' => Banner::getOneColumnBanner2(),
+            ]);
+        });
+    }
+
+    private function oneColumnBanner3()
+    {
+        return tap(new Tab('one_column_banner3', trans('storefront::storefront.tabs.one_column_banner3')), function (Tab $tab) {
+            $tab->weight(60);
+            $tab->view('storefront::admin.storefront.tabs.one_column_banner3', [
+                'banner' => Banner::getOneColumnBanner3(),
+            ]);
+        });
+    }
+
+    private function oneColumnBanner4()
+    {
+        return tap(new Tab('one_column_banner4', trans('storefront::storefront.tabs.one_column_banner4')), function (Tab $tab) {
+            $tab->weight(80);
+            $tab->view('storefront::admin.storefront.tabs.one_column_banner4', [
+                'banner' => Banner::getOneColumnBanner4(),
             ]);
         });
     }

@@ -33,10 +33,18 @@ class HomePageComposer
             'topBrands' => $this->topBrands(),
             'flashSaleAndVerticalProducts' => $this->flashSaleAndVerticalProducts(),
             'twoColumnBanners' => $this->twoColumnBanners(),
+            'twoColumnBanners1' => $this->twoColumnBanners1(),
+            'twoColumnBanners2' => $this->twoColumnBanners2(),
+            'twoColumnBanners3' => $this->twoColumnBanners3(),
+            'twoColumnBanners4' => $this->twoColumnBanners4(),
             'productGrid' => $this->productGrid(),
             'threeColumnBanners' => $this->threeColumnBanners(),
             'tabProductsTwo' => $this->tabProductsTwo(),
             'oneColumnBanner' => $this->oneColumnBanner(),
+            'oneColumnBanner1' => $this->oneColumnBanner1(),
+            'oneColumnBanner2' => $this->oneColumnBanner2(),
+            'oneColumnBanner3' => $this->oneColumnBanner3(),
+            'oneColumnBanner4' => $this->oneColumnBanner4(),
             'blogPosts' => $this->blogPosts(),
         ]);
     }
@@ -146,6 +154,34 @@ class HomePageComposer
         }
     }
 
+    private function twoColumnBanners1()
+    {
+        if (setting('storefront_two_column_banners1_enabled')) {
+            return Banner::getTwoColumnBanners1();
+        }
+    }
+
+    private function twoColumnBanners2()
+    {
+        if (setting('storefront_two_column_banners2_enabled')) {
+            return Banner::getTwoColumnBanners2();
+        }
+    }
+
+    private function twoColumnBanners3()
+    {
+        if (setting('storefront_two_column_banners3_enabled')) {
+            return Banner::getTwoColumnBanners3();
+        }
+    }
+
+    private function twoColumnBanners4()
+    {
+        if (setting('storefront_two_column_banners4_enabled')) {
+            return Banner::getTwoColumnBanners4();
+        }
+    }
+
 
     private function productGrid()
     {
@@ -192,6 +228,34 @@ class HomePageComposer
     {
         if (setting('storefront_one_column_banner_enabled')) {
             return Banner::getOneColumnBanner();
+        }
+    }
+
+    private function oneColumnBanner1()
+    {
+        if (setting('storefront_one_column_banner1_enabled')) {
+            return Banner::getOneColumnBanner1();
+        }
+    }
+
+    private function oneColumnBanner2()
+    {
+        if (setting('storefront_one_column_banner2_enabled')) {
+            return Banner::getOneColumnBanner2();
+        }
+    }
+
+    private function oneColumnBanner3()
+    {
+        if (setting('storefront_one_column_banner3_enabled')) {
+            return Banner::getOneColumnBanner3();
+        }
+    }
+
+    private function oneColumnBanner4()
+    {
+        if (setting('storefront_one_column_banner4_enabled')) {
+            return Banner::getOneColumnBanner4();
         }
     }
 
