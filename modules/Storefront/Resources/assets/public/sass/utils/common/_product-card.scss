@@ -6,9 +6,10 @@
     padding: 20px 20px 0;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid $color-gray-lite;
+    border: 1px solid var(--color-primary);
     border-radius: $radius-default;
     transition: $transition-primary;
+    background-color: #fff;
 
     &:hover {
         border-color: $color-white-lite;

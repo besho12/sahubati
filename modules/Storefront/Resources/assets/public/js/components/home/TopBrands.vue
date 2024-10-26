@@ -31,42 +31,47 @@ export default {
                 arrows: true,
                 infinite: true,
                 slidesToShow: 7,
-                slidesToScroll: 7,
+                slidesToScroll: 1,
                 rtl: window.FleetCart.rtl,
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                speed: 500,
+                infinite: true,
+                 
                 responsive: [
                     {
                         breakpoint: 1200,
                         settings: {
                             slidesToShow: 6,
-                            slidesToScroll: 6,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 1050,
                         settings: {
                             slidesToShow: 5,
-                            slidesToScroll: 5,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 900,
                         settings: {
                             slidesToShow: 4,
-                            slidesToScroll: 4,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 750,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 450,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToScroll: 1,
                         },
                     },
                 ],

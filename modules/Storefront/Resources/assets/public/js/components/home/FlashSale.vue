@@ -65,12 +65,17 @@ export default {
                 rtl: window.FleetCart.rtl,
                 prevArrow: slickPrevArrow(),
                 nextArrow: slickNextArrow(),
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                speed: 500,
+                infinite: true,
+                 
                 responsive: [
                     {
                         breakpoint: 1200,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToScroll: 1,
                         },
                     },
                     {

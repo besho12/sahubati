@@ -274,6 +274,11 @@ $(() => {
                 fade,
                 dots,
                 arrows,
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                speed: 500,
+                infinite: true,
+                 
             })
             .slickAnimation();
     }
@@ -287,28 +292,33 @@ $(() => {
         rtl: window.FleetCart.rtl,
         autoplay: true,
         slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToScroll: 1,
         arrows: true,
+        autoplay: true,     
+        autoplaySpeed: 1500,
+        speed: 500,
+        infinite: true,
+         
         responsive: [
             {
                 breakpoint: 1401,
                 settings: {
                     slidesToShow: 4,
-                    slidesToScroll: 4,
+                    slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 1181,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 781,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                 },
             },
             {

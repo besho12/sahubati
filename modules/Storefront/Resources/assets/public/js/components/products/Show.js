@@ -137,6 +137,11 @@ export default {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 rtl: window.FleetCart.rtl,
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                speed: 500,
+                infinite: true,
+                 
             });
         },
 

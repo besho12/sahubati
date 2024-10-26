@@ -5,6 +5,10 @@
     padding-top: 60px;
 }
 
+.footer-wrap {
+    background-color: $color-white;
+}
+
 @media screen and (max-width: $lg) {
     .footer {
         padding-bottom: 82px;

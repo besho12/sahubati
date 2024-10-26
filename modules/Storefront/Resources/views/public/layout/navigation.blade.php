@@ -2,11 +2,12 @@
     <div class="container">
         <div class="navigation-inner">
             @include('storefront::public.layout.navigation.category_menu')
-            @include('storefront::public.layout.navigation.primary_menu')
+            @include('storefront::public.layout.navigation.customized_navbar')
+            {{-- @include('storefront::public.layout.navigation.primary_menu')
 
             <span class="navigation-text">
                 {{ setting('storefront_navbar_text') }}
-            </span>
+            </span> --}}
         </div>
     </div>
 </section>

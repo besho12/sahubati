@@ -69,56 +69,61 @@ export default {
                 arrows: false,
                 infinite: true,
                 slidesToShow: 6,
-                slidesToScroll: 6,
+                slidesToScroll: 1,
                 rtl: window.FleetCart.rtl,
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                speed: 500,
+                infinite: true,
+                 
                 responsive: [
                     {
                         breakpoint: 1761,
                         settings: {
                             slidesToShow: 5,
-                            slidesToScroll: 5,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 1301,
                         settings: {
                             slidesToShow: 4,
-                            slidesToScroll: 4,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 1051,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 992,
                         settings: {
                             slidesToShow: 4,
-                            slidesToScroll: 4,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 881,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 768,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 641,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToScroll: 1,
                         },
                     },
                 ],

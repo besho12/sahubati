@@ -1,0 +1,33 @@
+<div class="customized_navbar">
+    <div class="whb-row whb-header-bottom whb-not-sticky-row whb-with-bg whb-without-border whb-color-dark whb-flex-flex-middle">
+        <div class="container" style="padding-left: 0px;">
+            <div class="whb-flex-row whb-header-bottom-inner">
+                <div class="whb-column whb-col-left whb-visible-lg">
+        <div class="wd-tools-element wd-header-sticky-nav wd-style-text wd-design-7 wd-with-wrap whb-0l97itdsdnzqussz2bq5">
+        <a href="#" rel="nofollow" aria-label="Open sticky navigation">
+                        <span class="wd-tools-inner">
+            
+            <span class="wd-tools-icon">
+                        </span>
+    
+           
+                </a>
+    </div>
+    </div>
+    <div class="whb-column whb-col-center whb-visible-lg">
+        <div class="wd-header-nav wd-header-main-nav text-left wd-design-1" role="navigation" aria-label="Main navigation">
+        <ul id="menu-menu-mob" class="menu wd-nav wd-nav-main wd-style-bg wd-gap-s wd-offsets-calculated"><li id="menu-item-64469" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-14 current_page_item menu-item-64469 item-level-0 menu-simple-dropdown wd-event-hover"><a href="https://q8vapes.com/" class="woodmart-nav-link"><img loading="lazy" width="150" height="150" src="https://q8vapes.com/wp-content/uploads/2024/06/home-150x150.png" class="wd-nav-img wd-lazy-load wd-lazy-fade wd-loaded" alt="" decoding="async" srcset="https://q8vapes.com/wp-content/uploads/2024/06/home-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/06/home-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/06/home.png 256w" sizes="(max-width: 150px) 100vw, 150px" data-wood-src="https://q8vapes.com/wp-content/uploads/2024/06/home-150x150.png" data-srcset="https://q8vapes.com/wp-content/uploads/2024/06/home-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/06/home-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/06/home.png 256w"><span class="nav-link-text">Home</span></a></li>
+    <li id="menu-item-65198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65198 item-level-0 menu-simple-dropdown wd-event-hover item-with-label item-label-green"><a href="https://q8vapes.com/recently-arrived/" class="woodmart-nav-link"><span class="nav-link-text">Recently Arrived</span><span class="menu-label menu-label-green">NEW</span></a></li>
+    <li id="menu-item-64801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64801 item-level-0 menu-simple-dropdown wd-event-hover item-with-label item-label-red"><a href="https://q8vapes.com/offers-2/" class="woodmart-nav-link"><img loading="lazy" width="150" height="150" src="https://q8vapes.com/wp-content/uploads/2024/02/discount-2-150x150.png" class="wd-nav-img wd-lazy-load wd-lazy-fade wd-loaded" alt="" decoding="async" srcset="https://q8vapes.com/wp-content/uploads/2024/02/discount-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2-300x300.png 300w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2.png 512w" sizes="(max-width: 150px) 100vw, 150px" data-wood-src="https://q8vapes.com/wp-content/uploads/2024/02/discount-2-150x150.png" data-srcset="https://q8vapes.com/wp-content/uploads/2024/02/discount-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2-300x300.png 300w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/02/discount-2.png 512w"><span class="nav-link-text">Offers</span><span class="menu-label menu-label-red">-86%</span></a></li>
+    <li id="menu-item-64470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64470 item-level-0 menu-simple-dropdown wd-event-hover"><a href="https://q8vapes.com/blog/" class="woodmart-nav-link"><img loading="lazy" width="150" height="150" src="https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-150x150.png" class="wd-nav-img wd-lazy-load wd-lazy-fade wd-loaded" alt="" decoding="async" srcset="https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-300x300.png 300w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2.png 512w" sizes="(max-width: 150px) 100vw, 150px" data-wood-src="https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-150x150.png" data-srcset="https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-300x300.png 300w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2023/09/blogger-2.png 512w"><span class="nav-link-text">Blog</span></a></li>
+    <li id="menu-item-64861" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64861 item-level-0 menu-simple-dropdown wd-event-hover"><a href="https://q8vapes.com/contact-us/" class="woodmart-nav-link"><span class="nav-link-text">Contact us</span></a></li>
+    <li id="menu-item-81674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-81674 item-level-0 menu-simple-dropdown wd-event-hover"><a href="https://q8vapes.com/privacy-policy/" class="woodmart-nav-link"><img loading="lazy" width="150" height="150" src="https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-150x150.png" class="wd-nav-img wd-lazy-load wd-lazy-fade wd-loaded" alt="" decoding="async" srcset="https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/06/insurance-2.png 256w" sizes="(max-width: 150px) 100vw, 150px" data-wood-src="https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-150x150.png" data-srcset="https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-150x150.png 150w, https://q8vapes.com/wp-content/uploads/2024/06/insurance-2-12x12.png 12w, https://q8vapes.com/wp-content/uploads/2024/06/insurance-2.png 256w"><span class="nav-link-text">Privacy Policy</span></a></li>
+    </ul></div><!--END MAIN-NAV-->
+    <div class="wd-header-divider whb-divider-default  whb-94kdcqg1qrjiza7v2rrt"></div>
+    </div>
+   
+ 
+            </div>
+        </div>
+    </div>
+</div>

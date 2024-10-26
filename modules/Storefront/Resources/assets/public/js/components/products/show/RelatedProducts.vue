@@ -38,37 +38,42 @@ export default {
             arrows: true,
             infinite: true,
             slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToScroll: 1,
             rtl: window.FleetCart.rtl,
             prevArrow: slickPrevArrow(),
             nextArrow: slickNextArrow(),
+            autoplay: true,     
+            autoplaySpeed: 1500,
+            speed: 500,
+            infinite: true,
+             
             responsive: [
                 {
                     breakpoint: 1761,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4,
+                        slidesToScroll: 1,
                     },
                 },
                 {
                     breakpoint: 1341,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: 1,
                     },
                 },
                 {
                     breakpoint: 992,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4,
+                        slidesToScroll: 1,
                     },
                 },
                 {
                     breakpoint: 881,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: 1,
                     },
                 },
                 {
@@ -77,7 +82,7 @@ export default {
                         dots: true,
                         arrows: false,
                         slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: 1,
                     },
                 },
                 {
@@ -86,7 +91,7 @@ export default {
                         dots: true,
                         arrows: false,
                         slidesToShow: 2,
-                        slidesToScroll: 2,
+                        slidesToScroll: 1,
                     },
                 },
             ],

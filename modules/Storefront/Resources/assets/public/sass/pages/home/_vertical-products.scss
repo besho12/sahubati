@@ -21,7 +21,8 @@
 
 .daily-deals {
     border-radius: $radius-default;
-    border: 1px solid $color-gray-lite;
+    border: 1px solid var(--color-primary);
+    background-color: #fff;
 
     .arrow-prev.slick-arrow,
     .arrow-next.slick-arrow {

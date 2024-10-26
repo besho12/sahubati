@@ -1,8 +1,8 @@
 <div class="category-nav {{ request()->routeIs('home') ? 'show' : 'category-dropdown-menu' }}">
-    <div class="category-nav-inner">
+    {{-- <div class="category-nav-inner">
         <span>{{ trans('storefront::layout.all_categories_header') }}</span>
         <i class="las la-bars"></i>
-    </div>
+    </div> --}}
 
     @if ($categoryMenu->menus()->isNotEmpty())
         <div class="category-dropdown-wrap">

@@ -41,6 +41,11 @@ export default {
                 slidesToScroll: 1,
                 asNavFor: $(".product-gallery-thumbnail"),
                 rtl: window.FleetCart.rtl,
+                autoplay: true,     
+                autoplaySpeed: 1500,
+                infinite: true,
+                speed: 500,
+                 
             });
         },
 
@@ -61,6 +66,11 @@ export default {
                     focusOnSelect: true,
                     rtl: window.FleetCart.rtl,
                     asNavFor: $(".product-gallery-preview"),
+                    autoplay: true,     
+                    autoplaySpeed: 1500,
+                    speed: 500,
+                    infinite: true,
+                     
                     responsive: [
                         {
                             breakpoint: 1601,

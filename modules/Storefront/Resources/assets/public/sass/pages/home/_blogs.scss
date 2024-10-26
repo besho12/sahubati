@@ -53,9 +53,10 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    border: 1px solid $color-gray-lite;
     border-radius: $radius-default;
     transition: $transition-default;
+    border: 1px solid var(--color-primary);
+    background-color: #fff;
 
     &:hover {
         border-color: $color-white-lite;
