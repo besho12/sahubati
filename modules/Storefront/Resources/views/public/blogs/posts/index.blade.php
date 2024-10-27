@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-6 order-0 order-lg-1 mb-4 mb-lg-0">
+                <div class="col-xl-4 col-lg-6 order-0 order-lg-1 mb-4 mb-lg-0 new_section">
                     @include('storefront::public.blogs.posts.layouts.sidebar')
                 </div>
             </div>
