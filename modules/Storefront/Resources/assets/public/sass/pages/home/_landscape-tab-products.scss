@@ -117,6 +117,24 @@
 
 .navigation-inner {
     border-radius: unset;
+    background: #0000001a;
+}
+
+.navigation-wrap {
+    background: rgb(229 229 229);;
+}
+
+.category-nav.category-dropdown-menu {
+    background: rgb(229 229 229);
+}
+
+.whb-row.whb-header-bottom.whb-not-sticky-row.whb-with-bg.whb-without-border .container{
+    background: #0000001a;
+}
+
+.top-nav-wrap .container {
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
 .category-nav.show{
@@ -2207,4 +2225,21 @@
     color: #fff;
     background-color: var(--wd-primary-color);
     border-radius: 35px;
+}
+
+.top-nav .top-nav-right-list > li > i {
+    color: #fff !important
+}
+.top-nav .top-nav-right-list > li > a > i {
+    color: #fff !important;
+}
+.top-nav .top-nav-right-list > li > a {
+    color: #fff !important;
+}
+.top-nav .top-nav-right-list .nice-select .option {
+    color: var(--color-primary);
+}
+.top-nav .top-nav-right-list .nice-select .option:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }

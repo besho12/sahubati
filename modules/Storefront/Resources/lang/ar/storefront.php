@@ -101,6 +101,7 @@ return [
         'one_column_banner2' => '2 لافتة عمود واحد',
         'one_column_banner3' => '3 لافتة عمود واحد',
         'one_column_banner4' => '4 لافتة عمود واحد',
+        'one_column_banner5' => '5 لافتة عمود واحد',
         'blogs' => 'المدونات',
     ],
     'social_links' => [

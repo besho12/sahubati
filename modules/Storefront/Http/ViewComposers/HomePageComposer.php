@@ -45,6 +45,7 @@ class HomePageComposer
             'oneColumnBanner2' => $this->oneColumnBanner2(),
             'oneColumnBanner3' => $this->oneColumnBanner3(),
             'oneColumnBanner4' => $this->oneColumnBanner4(),
+            'oneColumnBanner5' => $this->oneColumnBanner5(),
             'blogPosts' => $this->blogPosts(),
         ]);
     }
@@ -235,6 +236,13 @@ class HomePageComposer
     {
         if (setting('storefront_one_column_banner1_enabled')) {
             return Banner::getOneColumnBanner1();
+        }
+    }
+
+    private function oneColumnBanner5()
+    {
+        if (setting('storefront_one_column_banner5_enabled')) {
+            return Banner::getOneColumnBanner5();
         }
     }
 

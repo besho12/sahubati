@@ -120,6 +120,11 @@ class Banner
         return self::findByName('storefront_one_column_banner1');
     }
 
+    public static function getOneColumnBanner5()
+    {
+        return self::findByName('storefront_one_column_banner5');
+    }
+
     public static function getOneColumnBanner2()
     {
         return self::findByName('storefront_one_column_banner2');

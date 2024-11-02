@@ -9,6 +9,10 @@
         <home-features :features="{{ json_encode($features) }}"></home-features>
     @endif
 
+    @if (setting('storefront_one_column_banner5_enabled'))
+        <banner-one-column :banner="{{ json_encode($oneColumnBanner5) }}"></banner-one-column>
+    @endif
+
     @if (setting('storefront_featured_categories_section_enabled'))
         <featured-categories :data="{{ json_encode($featuredCategories) }}"></featured-categories>
     @endif

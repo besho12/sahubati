@@ -39,6 +39,7 @@ class StorefrontTabs extends Tabs
         $this->group('home_page_sections', trans('storefront::storefront.tabs.group.home_page_sections'))
             ->add($this->sliderBanners())
             ->add($this->threeColumnFullWidthBanners())
+            ->add($this->oneColumnBanner5())
             ->add($this->featuredCategories())
             ->add($this->twoColumnBanners())
             ->add($this->oneColumnBanner())
@@ -422,6 +423,16 @@ class StorefrontTabs extends Tabs
             $tab->weight(45);
             $tab->view('storefront::admin.storefront.tabs.one_column_banner1', [
                 'banner' => Banner::getOneColumnBanner1(),
+            ]);
+        });
+    }
+
+    private function oneColumnBanner5()
+    {
+        return tap(new Tab('one_column_banner5', trans('storefront::storefront.tabs.one_column_banner5')), function (Tab $tab) {
+            $tab->weight(38);
+            $tab->view('storefront::admin.storefront.tabs.one_column_banner5', [
+                'banner' => Banner::getOneColumnBanner5(),
             ]);
         });
     }

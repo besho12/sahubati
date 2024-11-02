@@ -41,6 +41,7 @@ return [
         'enable_one_column_banner_section2' => 'Enable One column banner section 2',
         'enable_one_column_banner_section3' => 'Enable One column banner section 3',
         'enable_one_column_banner_section4' => 'Enable One column banner section 4',
+        'enable_one_column_banner_section5' => 'Enable One column banner section 5',
         'enable_blogs_section' => 'Enable Blogs Section',
         'recent_blogs' => [
             '5' => 5,
@@ -102,6 +103,7 @@ return [
         'one_column_banner2' => 'One Column Banner 2',
         'one_column_banner3' => 'One Column Banner 3',
         'one_column_banner4' => 'One Column Banner 4',
+        'one_column_banner5' => 'One Column Banner 5',
         'blogs' => 'Blogs',
     ],
     'social_links' => [
