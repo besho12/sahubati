@@ -44,7 +44,8 @@ class SettingTabs extends Tabs
         $this->group('shipping_methods', trans('setting::settings.tabs.group.shipping_methods'))
             ->add($this->freeShipping())
             ->add($this->localPickup())
-            ->add($this->flatRate());
+            ->add($this->flatRate())
+            ->add($this->shippingRate());
 
         $this->group('payment_methods', trans('setting::settings.tabs.group.payment_methods'))
             ->add($this->paymob())
@@ -333,6 +334,18 @@ class SettingTabs extends Tabs
             $tab->fields(['flat_rate_enabled', 'translatable.flat_rate_label', 'flat_rate_cost']);
 
             $tab->view('setting::admin.settings.tabs.flat_rate');
+        });
+    }
+
+
+    private function shippingRate()
+    {
+        return tap(new Tab('shipping_rate', trans('setting::settings.tabs.shipping_rate')), function (Tab $tab) {
+            $tab->weight(70);
+
+            $tab->fields(['shipping_rate_enabled', 'translatable.shipping_rate_label']);
+
+            $tab->view('setting::admin.settings.tabs.shipping_rate');
         });
     }
 

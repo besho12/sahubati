@@ -100,6 +100,9 @@ return [
     'translatable.flat_rate_label' => 'Label',
     'flat_rate_cost' => 'Cost',
 
+    'shipping_rate_enabled' => 'Status',
+    'translatable.shipping_rate_label' => 'Label',
+
     'paypal_enabled' => 'Status',
     'translatable.paypal_label' => 'Label',
     'translatable.paypal_description' => 'Description',

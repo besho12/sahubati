@@ -100,6 +100,9 @@ return [
     'translatable.flat_rate_label' => 'التسمية',
     'flat_rate_cost' => 'التكلفة',
 
+    'shipping_rate_enabled' => 'الحالة',
+    'translatable.shipping_rate_label' => 'التسمية',
+
     'paypal_enabled' => 'الحالة',
     'translatable.paypal_label' => 'التسمية',
     'translatable.paypal_description' => 'الوصف',
