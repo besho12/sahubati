@@ -1,0 +1,9 @@
+{
+    "name": "ShippingArea",
+    "alias": "shippingarea",
+    "description": "Managing shippingareas.",
+    "priority": 9999,
+    "providers": [
+        "Modules\\ShippingArea\\Providers\\ShippingAreaServiceProvider"
+    ]
+}
