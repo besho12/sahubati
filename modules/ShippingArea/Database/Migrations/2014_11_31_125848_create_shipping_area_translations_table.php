@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePageTranslationsTable extends Migration
+class CreateShippingAreaTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreatePageTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('page_translations', function (Blueprint $table) {
+        Schema::create('shipping_area_translations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('page_id')->unsigned();
+            $table->unsignedInteger('shipping_area_id');
             $table->string('locale');
             $table->string('name');
-            $table->longText('body');
 
-            $table->unique(['page_id', 'locale']);
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+            $table->unique(['shipping_area_id', 'locale']);
+            $table->foreign('shipping_area_id')->references('id')->on('shipping_areas')->onDelete('cascade');
         });
+
     }
 
 
@@ -33,6 +33,6 @@ class CreatePageTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('page_translations');
+        Schema::dropIfExists('shipping_areas_translations');
     }
 }

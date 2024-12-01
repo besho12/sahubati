@@ -9,29 +9,20 @@ class ShippingAreaTabs extends Tabs
 {
     public function make()
     {
-        $this->group('shippingarea_information', trans('shippingarea::shippingareas.tabs.group.shippingarea_information'))
+        $this->group('shippingarea_information', trans('shippingarea::shipping_areas.tabs.group.shippingarea_information'))
             ->active()
-            ->add($this->general())
-            ->add($this->seo());
+            ->add($this->general());
     }
 
 
     private function general()
     {
-        return tap(new Tab('general', trans('shippingarea::shippingareas.tabs.general')), function (Tab $tab) {
+        return tap(new Tab('general', trans('shippingarea::shipping_areas.tabs.general')), function (Tab $tab) {
             $tab->active();
             $tab->weight(5);
-            $tab->fields(['title', 'body', 'is_active', 'slug']);
-            $tab->view('shippingarea::admin.shippingareas.tabs.general');
+            $tab->fields(['title', 'cost' , 'is_active', 'slug']);
+            $tab->view('shippingarea::admin.shipping_areas.tabs.general');
         });
     }
 
-
-    private function seo()
-    {
-        return tap(new Tab('seo', trans('shippingarea::shippingareas.tabs.seo')), function (Tab $tab) {
-            $tab->weight(10);
-            $tab->view('shippingarea::admin.shippingareas.tabs.seo');
-        });
-    }
 }

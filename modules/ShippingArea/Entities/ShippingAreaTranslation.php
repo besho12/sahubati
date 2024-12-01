@@ -11,5 +11,5 @@ class ShippingAreaTranslation extends TranslationModel
      *
      * @var array
      */
-    protected $fillable = ['name', 'body'];
+    protected $fillable = ['name'];
 }

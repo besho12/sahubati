@@ -26,6 +26,7 @@
     "Review": true,
     "Setting": true,
     "Shipping": true,
+    "ShippingArea": true,
     "Slider": true,
     "Sms": true,
     "Storefront": true,

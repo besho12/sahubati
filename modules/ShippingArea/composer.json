@@ -1,6 +1,6 @@
 {
-    "name": "fleetcart/shippingarea-module",
-    "description": "The FleetCart Page Module.",
+    "name": "fleetcart/shippingarea",
+    "description": "The FleetCart ShippingArea Module.",
     "authors": [
         {
             "name": "Envay Soft",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Page\\": ""
+            "Modules\\ShippingArea\\": ""
         }
     },
     "extra": {

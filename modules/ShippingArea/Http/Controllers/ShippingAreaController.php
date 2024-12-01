@@ -20,6 +20,6 @@ class ShippingAreaController
         $logo = File::findOrNew(setting('storefront_header_logo'))->path;
         $shippingArea = ShippingArea::where('slug', $slug)->firstOrFail();
 
-        return view('storefront::public.shippingareas.show', compact('shippingarea', 'logo'));
+        return view('storefront::public.shipping_areas.show', compact('shippingarea', 'logo'));
     }
 }

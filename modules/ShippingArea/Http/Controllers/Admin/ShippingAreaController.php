@@ -22,14 +22,14 @@ class ShippingAreaController
      *
      * @var string
      */
-    protected $label = 'shippingarea::shippingareas.shippingarea';
+    protected $label = 'shippingarea::pages.shippingarea';
 
     /**
      * View path of the resource.
      *
      * @var string
      */
-    protected $viewPath = 'shippingarea::admin.shippingareas';
+    protected $viewPath = 'shippingarea::admin.shipping_areas';
 
     /**
      * Form requests for the resource.

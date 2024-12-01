@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration
+class CreateShippingAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('shipping_areas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
             $table->boolean('is_active');
+            $table->decimal('cost', 18, 4)->unsigned();
             $table->timestamps();
         });
+
     }
 
 
@@ -29,6 +31,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('shipping_areas');
     }
 }

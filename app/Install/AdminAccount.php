@@ -125,6 +125,11 @@ class AdminAccount
             'admin.coupons.create' => true,
             'admin.coupons.edit' => true,
             'admin.coupons.destroy' => true,
+            # ShippingArea
+            'admin.shipping_areas.index' => true,
+            'admin.shipping_areas.create' => true,
+            'admin.shipping_areas.edit' => true,
+            'admin.shipping_areas.destroy' => true,
             # menus
             'admin.menus.index' => true,
             'admin.menus.create' => true,

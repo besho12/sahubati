@@ -18,7 +18,7 @@ class ShippingAreaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        TabManager::register('shippingareas', ShippingAreaTabs::class);
+        TabManager::register('shipping_areas', ShippingAreaTabs::class);
 
         $this->registerShippingAreaRoute();
     }
@@ -30,7 +30,7 @@ class ShippingAreaServiceProvider extends ServiceProvider
             Route::get('{slug}', [ShippingAreaController::class, 'show'])
                 ->prefix(LaravelLocalization::setLocale())
                 ->middleware(['localize', 'locale_session_redirect', 'localization_redirect', 'web'])
-                ->name('shippingareas.show');
+                ->name('shipping_areas.show');
         });
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Page\Sidebar;
+namespace Modules\ShippingArea\Sidebar;
 
 use Maatwebsite\Sidebar\Item;
 use Maatwebsite\Sidebar\Menu;
@@ -12,12 +12,12 @@ class SidebarExtender extends BaseSidebarExtender
     public function extend(Menu $menu)
     {
         $menu->group(trans('admin::sidebar.content'), function (Group $group) {
-            $group->item(trans('page::sidebar.shippingareas'), function (Item $item) {
-                $item->icon('fa fa-file');
+            $group->item('ShippingArea', function (Item $item) {
+                $item->icon('fa fa-map');
                 $item->weight(25);
-                $item->route('admin.shippingareas.index');
+                $item->route('admin.shipping_areas.index');
                 $item->authorize(
-                    $this->auth->hasAccess('admin.shippingareas.index')
+                    $this->auth->hasAccess('admin.shipping_areas.index')
                 );
             });
         });

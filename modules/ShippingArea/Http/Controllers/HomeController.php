@@ -12,7 +12,7 @@ class HomeController
      * @return Response
      */
     public function index()
-    {
+    { 
         return view('storefront::public.home.index');
     }
 }

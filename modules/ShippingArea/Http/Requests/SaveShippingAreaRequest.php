@@ -1,19 +1,19 @@
 <?php
 
-namespace Modules\Page\Http\Requests;
+namespace Modules\ShippingArea\Http\Requests;
 
 use Illuminate\Validation\Rule;
-use Modules\Page\Entities\Page;
+use Modules\ShippingArea\Entities\ShippingArea;
 use Modules\Core\Http\Requests\Request;
 
-class SavePageRequest extends Request
+class SaveShippingAreaRequest extends Request
 {
     /**
      * Available attributes.
      *
      * @var array
      */
-    protected $availableAttributes = 'page::attributes';
+    protected $availableAttributes = 'ShippingArea::attributes';
 
 
     /**
@@ -26,7 +26,6 @@ class SavePageRequest extends Request
         return [
             'slug' => $this->getSlugRules(),
             'name' => 'required',
-            'body' => 'required',
             'is_active' => 'required|boolean',
         ];
     }
@@ -38,7 +37,7 @@ class SavePageRequest extends Request
             ? ['required']
             : ['sometimes'];
 
-        $slug = Page::withoutGlobalScope('active')->where('id', $this->id)->value('slug');
+        $slug = ShippingArea::withoutGlobalScope('active')->where('id', $this->id)->value('slug');
 
         $rules[] = Rule::unique('pages', 'slug')->ignore($slug, 'slug');
 

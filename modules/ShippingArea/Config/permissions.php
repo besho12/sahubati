@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'admin.shippingareas' => [
+    'admin.shipping_areas' => [
         'index' => 'shippingarea::permissions.index',
         'create' => 'shippingarea::permissions.create',
         'edit' => 'shippingarea::permissions.edit',

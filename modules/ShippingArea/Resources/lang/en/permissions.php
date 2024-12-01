@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'index' => 'Index Pages',
-    'create' => 'Create Pages',
-    'edit' => 'Edit Pages',
-    'destroy' => 'Delete Pages',
+    'index' => 'Index Shipping Areas',
+    'create' => 'Create Shipping Areas',
+    'edit' => 'Edit Shipping Areas',
+    'destroy' => 'Delete Shipping Areas',
 ];

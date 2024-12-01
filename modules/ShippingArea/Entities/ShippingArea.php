@@ -23,12 +23,14 @@ class ShippingArea extends Model implements Sitemapable
      */
     protected $with = ['translations'];
 
+    // protected $table = 'shipping_areas';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['slug', 'is_active'];
+    protected $fillable = ['slug', 'cost' , 'is_active'];
 
     /**
      * The attributes that should be cast to native types.
@@ -44,7 +46,7 @@ class ShippingArea extends Model implements Sitemapable
      *
      * @var array
      */
-    protected $translatedAttributes = ['name', 'body'];
+    protected $translatedAttributes = ['name'];
 
     /**
      * The attribute that will be slugged.
