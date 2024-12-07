@@ -167,5 +167,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="is-package" class="col-sm-3 control-label text-left">
+                {{ trans('product::attributes.is_package') }}
+            </label>
+
+            <div class="col-sm-9">
+                <div class="switch">
+                    <input
+                        type="checkbox"
+                        name="is_package"
+                        id="is_package"
+                        v-model="form.is_package"
+                    >
+
+                    <label for="is_package">
+                        {{ trans('product::products.form.mark_as_package') }}
+                    </label>
+
+                    <span class="help-block text-red" v-if="errors.has('is_package')" v-text="errors.get('is_package')"></span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

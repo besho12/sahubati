@@ -11,6 +11,7 @@ return [
     'tags' => 'Tags',
     'is_virtual' => 'Virtual',
     'is_active' => 'Status',
+    'is_package' => 'Package',
     'price' => 'Price',
     'special_price' => 'Special Price',
     'special_price_type' => 'Special Price Type',

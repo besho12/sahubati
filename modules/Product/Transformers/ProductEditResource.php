@@ -54,6 +54,7 @@ class ProductEditResource extends JsonResource
             'downloads' => $this->filterFiles('downloads')->get()->map->only('id', 'filename'),
             'is_virtual' => $this->is_virtual,
             'is_active' => $this->is_active,
+            'is_package' => $this->is_package,
         ];
     }
 }
