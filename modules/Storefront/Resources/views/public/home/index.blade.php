@@ -88,20 +88,13 @@
         <banner-one-column :banner="{{ json_encode($oneColumnBanner4) }}"></banner-one-column>
     @endif
 
-    
-
     @if (setting('storefront_three_column_banners_enabled'))
         <banner-three-column :data="{{ json_encode($threeColumnBanners) }}"></banner-three-column>
     @endif
 
-    
-
-
-    
-
-    
-
-   
+    @if (setting('storefront_product_packages_section_enabled'))
+        <product-packages :data="{{ json_encode($productPackages) }}"></product-packages>
+    @endif
 
     @if (setting('storefront_blogs_section_enabled'))
         <blog-posts :data="{{ json_encode($blogPosts) }}"></blog-posts>

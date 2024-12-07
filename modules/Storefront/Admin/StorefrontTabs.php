@@ -57,6 +57,7 @@ class StorefrontTabs extends Tabs
             ->add($this->twoColumnBanners4())
             ->add($this->oneColumnBanner4())
             ->add($this->productGrid())
+            ->add($this->productPackages())
             ->add($this->blogs());
     }
 
@@ -263,7 +264,7 @@ class StorefrontTabs extends Tabs
 
     private function getProductListFromSetting($key)
     {
-        return ProductRepository::list(setting($key, []));
+        return ProductRepository::list(setting($key, []),);
     }
 
 
@@ -276,6 +277,19 @@ class StorefrontTabs extends Tabs
                 'tabTwoProducts' => $this->getProductListFromSetting('storefront_product_tabs_1_section_tab_2_products'),
                 'tabThreeProducts' => $this->getProductListFromSetting('storefront_product_tabs_1_section_tab_3_products'),
                 'tabFourProducts' => $this->getProductListFromSetting('storefront_product_tabs_1_section_tab_4_products'),
+            ]);
+        });
+    }
+
+    private function productPackages()
+    {
+        return tap(new Tab('product_packages', trans('storefront::storefront.tabs.product_packages')), function (Tab $tab) {
+            $tab->weight(84);
+            $tab->view('storefront::admin.storefront.tabs.product_packages', [
+                'tabOnePackages' => $this->getProductListFromSetting('storefront_product_packages_section_tab_1'),
+                'tabTwoPackages' => $this->getProductListFromSetting('storefront_product_packages_section_tab_2'),
+                'tabThreePackages' => $this->getProductListFromSetting('storefront_product_packages_section_tab_3'),
+                'tabFourPackages' => $this->getProductListFromSetting('storefront_product_packages_section_tab_4'),
             ]);
         });
     }

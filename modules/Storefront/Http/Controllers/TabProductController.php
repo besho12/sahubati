@@ -19,4 +19,8 @@ class TabProductController extends ProductIndexController
     {
         return $this->getProducts("storefront_product_tabs_{$sectionNumber}_section_tab_{$tabNumber}");
     }
+    public function packages($sectionNumber, $tabNumber)
+    {
+        return $this->getPackages("storefront_product_tabs_{$sectionNumber}_section_tab_{$tabNumber}");
+    }
 }

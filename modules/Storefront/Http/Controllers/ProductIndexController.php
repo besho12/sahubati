@@ -39,6 +39,21 @@ class ProductIndexController
             ->clean();
     }
 
+    protected function getPackages($settingPrefix)
+    {
+        $type = setting("{$settingPrefix}_product_type", 'custom_products');
+        $limit = setting("{$settingPrefix}_products_limit");
+
+
+        return Product::forCard()
+            ->where('is_package','1')
+            ->when($type === 'latest_products', $this->latestProductsCallback($limit))
+            ->when($type === 'custom_products', $this->customProductsCallback($settingPrefix))
+            ->get()
+            ->map
+            ->clean();
+    }
+
 
     private function categoryProducts($settingPrefix, $limit)
     {
