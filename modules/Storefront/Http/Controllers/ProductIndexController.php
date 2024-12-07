@@ -59,6 +59,10 @@ class ProductIndexController
     {
         return Category::findOrNew(setting("{$settingPrefix}_category_id"))
             ->products()
+            ->where(function ($query) {
+                $query->where('is_package','=',null)
+                ->orWhere('is_package','=','0');
+            })
             ->forCard()
             ->take($limit)
             ->get();
@@ -67,7 +71,10 @@ class ProductIndexController
 
     private function recentlyViewedProducts($limit)
     {
-        return collect($this->recentlyViewed->products())
+        return collect($this->recentlyViewed->products()->where(function ($query) {
+            $query->where('is_package','=',null)
+                ->orWhere('is_package','=','0');
+            }))
             ->reverse()
             ->when(!is_null($limit), function (Collection $products) use ($limit) {
                 return $products->take($limit);
