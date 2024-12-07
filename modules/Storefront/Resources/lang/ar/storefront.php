@@ -36,6 +36,7 @@ return [
         'enable_product_grid_section' => 'تفعيل قسم شبكة المنتجات',
         'enable_three_column_banners_section' => 'تفعيل قسم اللافتات ثلاثية الأعمدة',
         'enable_product_tabs_two_section' => 'تفعيل قسم علامات المنتج اثنان',
+        'enable_product_tabs_packages' => 'تفعيل قسم الحزم',
         'enable_one_column_banner_section' => 'تفعيل قسم لافتة عمود واحد',
         'enable_blogs_section' => 'تفعيل قسم المدونات',
         'recent_blogs' => [
@@ -91,6 +92,7 @@ return [
         'two_column_banners3' => '3 لافتات ثنائية الأعمدة',
         'two_column_banners4' => '4 لافتات ثنائية الأعمدة',
         'product_grid' => 'شبكة المنتجات',
+        'packages' => 'الحزم',
         'three_column_banners' => 'لافتات ثلاثية الأعمدة',
         'product_tabs_two' => 'علامات المنتج اثنان',
         'one_column_banner' => '1 لافتة عمود واحد',
