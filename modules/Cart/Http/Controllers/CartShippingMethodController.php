@@ -2,8 +2,10 @@
 
 namespace Modules\Cart\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Modules\Cart\Facades\Cart;
 use Modules\Shipping\Facades\ShippingMethod;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class CartShippingMethodController
 {
@@ -21,5 +23,10 @@ class CartShippingMethodController
         );
 
         return Cart::instance();
+    }
+
+    public function getAreaCost(Request $request){
+        return ShippingArea::where('slug',$request->area)->first()['cost'];
+
     }
 }

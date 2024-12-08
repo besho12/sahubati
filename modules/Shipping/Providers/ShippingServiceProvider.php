@@ -3,6 +3,7 @@
 namespace Modules\Shipping\Providers;
 
 use Modules\Shipping\Method;
+use Modules\Cart\Facades\Cart;
 use Illuminate\Support\ServiceProvider;
 use Modules\Shipping\Facades\ShippingMethod;
 
@@ -76,7 +77,7 @@ class ShippingServiceProvider extends ServiceProvider
     }
 
     private function get_shipping_cost(){
-        // return '60';
+        return '0';
     }
     
 }

@@ -11,6 +11,7 @@ use Modules\FlashSale\Entities\FlashSale;
 use Modules\Currency\Entities\CurrencyRate;
 use Modules\Account\Entities\DefaultAddress;
 use Modules\Shipping\Facades\ShippingMethod;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class OrderService
 {
@@ -147,10 +148,10 @@ class OrderService
             'shipping_area' => $request->shipping['area'],
             'sub_total' => Cart::subTotal()->amount(),
             'shipping_method' => Cart::shippingMethod()->name(),
-            'shipping_cost' => $this->getShippingCost(),
+            'shipping_cost' => $this->getShippingCost($request->billing['area']),
             'coupon_id' => Cart::coupon()->id(),
             'discount' => Cart::discount()->amount(),
-            'total' => $this->getTotalCost(),
+            'total' => $this->getTotalCost($request->billing['area']),
             'payment_method' => $request->payment_method,
             'currency' => currency(),
             'currency_rate' => CurrencyRate::for(currency()),
@@ -160,19 +161,24 @@ class OrderService
         ]);
     }
 
-    public function getShippingCost(){
+    public function get_area_cost($area){
+        return ShippingArea::where('slug',$area)->first()['cost'];        
+    }
+
+    public function getShippingCost($area){
         if(Cart::shippingMethod()->name() == 'shipping_rate'){
-            return 50;
+            return $this->get_area_cost($area);
         }
         return Cart::shippingCost()->amount();
     }
 
-    public function getTotalCost(){
-        if(Cart::shippingMethod()->name() == 'shipping_rate'){
-            return Cart::subTotal()->amount()+50;
+    public function getTotalCost($area){
+        if(Cart::shippingMethod()->name() == 'shipping_rate'){    
+            return Cart::subTotal()->amount()+$this->get_area_cost($area);
         }
         return Cart::total()->amount();
     }
+    
     private function storeOrderProducts(Order $order)
     {
         Cart::items()->each(function (CartItem $cartItem) use ($order) {
