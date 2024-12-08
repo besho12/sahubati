@@ -5,6 +5,7 @@ return [
     'account_details' => 'Account Details',
     'add_new_address' => 'Add New Address',
     'billing_details' => 'Billing Details',
+    'address_details' => 'Address Details',
     'default' => 'Default',
     'you_must_select_an_address' => 'You must select an address.',
     'please_select' => 'Please Select',

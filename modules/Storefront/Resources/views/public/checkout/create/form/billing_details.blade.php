@@ -1,5 +1,5 @@
 <div class="billing-details">
-    <h4 class="section-title">{{ trans('storefront::checkout.billing_details') }}</h4>
+    <h4 class="section-title">{{ trans('storefront::checkout.address_details') }}</h4>
 
     <div class="address-card-wrap" v-if="hasAddress" v-cloak>
         <div class="row">
@@ -24,6 +24,7 @@
                         <span v-text="address.address_1"></span>
                         <span v-if="address.address_2" v-text="address.address_2"></span>
                         <span v-html="`${address.city}, ${address.state_name} ${address.zip}`"></span>
+                        <span v-text="address.area_name"></span>
                         <span v-text="address.country_name"></span>
                     </div>
                 </address>
@@ -152,7 +153,7 @@
                             @change="changeBillingArea($event.target.value)">
                             <option value="">{{ trans('storefront::checkout.please_select') }}</option>
 
-                            <option v-for="(name, code) in countries" :value="code" v-text="name">
+                            <option v-for="(name, code) in areas" :value="code" v-text="name">
                             </option>
                         </select>
 

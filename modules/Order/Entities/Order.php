@@ -8,8 +8,8 @@ use Modules\Support\Money;
 use Modules\Support\State;
 use Modules\Support\Country;
 use Modules\Media\Entities\File;
-use Modules\Tax\Entities\TaxRate;
 use Illuminate\Http\JsonResponse;
+use Modules\Tax\Entities\TaxRate;
 use Illuminate\Support\Collection;
 use Modules\Order\OrderCollection;
 use Modules\Coupon\Entities\Coupon;
@@ -20,6 +20,7 @@ use Modules\Payment\HasTransactionReference;
 use Modules\Shipping\Facades\ShippingMethod;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Transaction\Entities\Transaction;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class Order extends Model
 {
@@ -195,10 +196,22 @@ class Order extends Model
         return "{$this->shipping_first_name} {$this->shipping_last_name}";
     }
 
-
+    
     public function getBillingCountryNameAttribute()
-    {
+    {        
         return Country::name($this->billing_country);
+    }
+
+
+    public function getBillingAreaNameAttribute()
+    {        
+        return ShippingArea::name($this->billing_area);
+    }
+
+
+    public function getShippingAreaNameAttribute()
+    {
+        return ShippingArea::name($this->shipping_area);
     }
 
 

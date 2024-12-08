@@ -119,4 +119,11 @@ class ShippingArea extends Model implements Sitemapable
         return $values;
     }
 
+    public static function name($code)
+    {
+        $list = self::get_shipping_areas();
+        return $list[$code];
+    }
+
+
 }

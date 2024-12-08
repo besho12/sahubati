@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="billing-address">
-                <h5 class="pull-left">{{ trans('order::orders.billing_address') }}</h5>
+                {{-- <h5 class="pull-left">{{ trans('order::orders.billing_address') }}</h5> --}}
 
                 <span>
                     {{ $order->billing_full_name }}
@@ -18,13 +18,18 @@
                     @endif
 
                     {{ $order->billing_city }}, {!! $order->billing_state_name !!} {{ $order->billing_zip }}
+
+                    <br>
+                    {{ $order->billing_area_name }}
+                    
                     <br>
                     {{ $order->billing_country_name }}
+                    
                 </span>
             </div>
         </div>
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="shipping-address">
                 <h5 class="pull-left">{{ trans('order::orders.shipping_address') }}</h5>
 
@@ -44,6 +49,6 @@
                     {{ $order->shipping_country_name }}
                 </span>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

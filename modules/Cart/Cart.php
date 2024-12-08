@@ -320,7 +320,7 @@ class Cart extends DarryldecodeCart implements JsonSerializable
     public function addTaxes($addTaxesToCartRequest)
     {
         $this->removeTaxes();
-
+        
         $this->findTaxes(
             $addTaxesToCartRequest->billing,
             $addTaxesToCartRequest->shipping

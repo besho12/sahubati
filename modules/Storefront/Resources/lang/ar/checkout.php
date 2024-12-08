@@ -5,6 +5,7 @@ return [
     'account_details' => 'تفاصيل الحساب',
     'add_new_address' => 'إضافة عنوان جديد',
     'billing_details' => 'تفاصيل الفوترة',
+    'address_details' => 'تفاصيل العنوان',
     'default' => 'افتراضي',
     'you_must_select_an_address' => 'يجب عليك اختيار عنوان.',
     'please_select' => 'يرجى الاختيار',

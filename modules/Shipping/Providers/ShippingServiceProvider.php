@@ -76,7 +76,7 @@ class ShippingServiceProvider extends ServiceProvider
     }
 
     private function get_shipping_cost(){
-        return '50';
+        // return '60';
     }
     
 }

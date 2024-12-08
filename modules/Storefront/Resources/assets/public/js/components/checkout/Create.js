@@ -141,6 +141,12 @@ export default {
                 this.$nextTick(this.renderPayPalButton);
             }
         },
+
+        "form.billing.area": function (newArea) {
+            if (newArea) {
+                store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
+            }
+        },
     },
 
     created() {
@@ -333,6 +339,7 @@ export default {
 
         changeShippingMethod(shippingMethodName) {
             this.$set(this.form, "shipping_method", shippingMethodName);
+            // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
         },
 
         async updateShippingMethod(shippingMethodName) {
@@ -353,11 +360,16 @@ export default {
                 );
 
                 store.updateCart(response.data);
+
+                // This will now execute after the `await` call completes successfully
+                store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
+
             } catch (error) {
                 this.$notify(error.response.data.message);
             } finally {
                 this.loadingOrderSummary = false;
             }
+
         },
 
         async addTaxes() {
@@ -376,6 +388,45 @@ export default {
                 this.loadingOrderSummary = false;
             }
         },
+
+        calculateShippingCost(NewArea){
+            // console.log('grr',NewArea);
+            // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = 35;
+            return 35;
+        },
+
+        // async calculateShippingCost(NewArea) {
+
+            
+         
+        //     var parent = this;
+        //     setTimeout(function(){
+        //         store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = 35;
+        //     },1000)
+           
+        //     // if (!NewArea) {
+        //     //     return;
+        //     // }
+
+        //     // this.loadingOrderSummary = true;
+
+        //     // // this.changeShippingMethod(NewArea);
+
+        //     // try {
+        //     //     const response = await axios.post(
+        //     //         route("cart.shipping_method.store"),
+        //     //         {
+        //     //             area: NewArea,
+        //     //         }
+        //     //     );
+
+        //     //     store.updateCart(response.data);
+        //     // } catch (error) {
+        //     //     this.$notify(error.response.data.message);
+        //     // } finally {
+        //     //     this.loadingOrderSummary = false;
+        //     // }
+        // },
 
         updateCart(cartItem, qty) {
             this.loadingOrderSummary = true;

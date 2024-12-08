@@ -6,12 +6,13 @@ use Modules\Support\State;
 use Modules\Support\Country;
 use Modules\User\Entities\User;
 use Modules\Support\Eloquent\Model;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class Address extends Model
 {
     protected $fillable = ['first_name', 'last_name', 'address_1', 'address_2', 'city', 'state', 'zip', 'country', 'area'];
 
-    protected $appends = ['full_name', 'state_name', 'country_name'];
+    protected $appends = ['full_name', 'state_name', 'area_name', 'country_name'];
 
 
     public function customer()
@@ -35,5 +36,10 @@ class Address extends Model
     public function getCountryNameAttribute()
     {
         return Country::name($this->country);
+    }
+
+    public function getAreaNameAttribute()
+    {
+        return ShippingArea::name($this->area);
     }
 }

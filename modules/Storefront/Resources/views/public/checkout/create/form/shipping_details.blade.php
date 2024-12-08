@@ -38,6 +38,7 @@
                                     <span v-text="address.address_1"></span>
                                     <span v-if="address.address_2" v-text="address.address_2"></span>
                                     <span v-html="`${address.city}, ${address.state_name} ${address.zip}`"></span>
+                                    <span v-text="address.area_name"></span>
                                     <span v-text="address.country_name"></span>
                                 </div>
                             </address>
