@@ -144,7 +144,7 @@ export default {
 
         "form.billing.area": function (newArea) {
             if (newArea) {
-                store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
             }
         },
     },
@@ -362,7 +362,7 @@ export default {
                 store.updateCart(response.data);
 
                 // This will now execute after the `await` call completes successfully
-                store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
 
             } catch (error) {
                 this.$notify(error.response.data.message);
@@ -380,8 +380,33 @@ export default {
                     route("cart.taxes.store"),
                     this.form
                 );
-
+                // response.data.availableShippingMethods.shipping_rate.cost.amount=50;
+                // response.data.availableShippingMethods.shipping_rate.cost.formatted=50;
+                // response.data.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.amount=50;
+                // response.data.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted=50;
+                // if(response.data.shippingMethodName && response.data.shippingMethodName=="shipping_rate"){
+                //     response.data.shippingCost.amount=50;
+                //     response.data.shippingCost.formatted=50;
+                //     response.data.shippingCost.inCurrentCurrency.amount=50;
+                //     response.data.shippingCost.inCurrentCurrency.formatted=50;
+                //     response.data.total.amount=response.data.subTotal.amount+response.data.shippingCost.amount;
+                //     response.data.total.formatted=response.data.subTotal.amount+response.data.shippingCost.amount;
+                //     response.data.total.inCurrentCurrency.amount=response.data.subTotal.amount+response.data.shippingCost.amount;
+                //     response.data.total.inCurrentCurrency.formatted=response.data.subTotal.amount+response.data.shippingCost.amount;
+                // }
+                // response.data.shippingCost.amount=50;
+                // response.data.shippingCost.inCurrentCurrency.amount=50;
+                // restest=this.calculateShippingCost('',response.data);
+                console.log('AAAAAAAAAAAAAAAAAAAAAAAA',response.data.shippingCost);
+                response.data=this.calculateShippingCost('',response.data);
+                console.log('SSSSSSSSSS',response.data);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.amount = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.amount = this.calculateShippingCost(this.form.billing.area);
                 store.updateCart(response.data);
+                // store.state.cart.availableShippingMethods.shipping_rate.amount = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.amount = this.calculateShippingCost(this.form.billing.area);
+                // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = this.calculateShippingCost(this.form.billing.area);
             } catch (error) {
                 this.$notify(error.response.data.message);
             } finally {
@@ -389,10 +414,30 @@ export default {
             }
         },
 
-        calculateShippingCost(NewArea){
+        calculateShippingCost(NewArea,CartData){
+
+            CartData.availableShippingMethods.shipping_rate.cost.amount=50;
+            CartData.availableShippingMethods.shipping_rate.cost.formatted=50;
+            CartData.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.amount=50;
+            CartData.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted=50;
+            if(CartData.shippingMethodName && CartData.shippingMethodName=="shipping_rate"){
+                CartData.shippingCost.amount=50;
+                CartData.shippingCost.formatted=50;
+                CartData.shippingCost.inCurrentCurrency.amount=50;
+                CartData.shippingCost.inCurrentCurrency.formatted=50;
+                CartData.total.amount=CartData.subTotal.amount+CartData.shippingCost.amount;
+                CartData.total.formatted=CartData.subTotal.amount+CartData.shippingCost.amount;
+                CartData.total.inCurrentCurrency.amount=CartData.subTotal.amount+CartData.shippingCost.amount;
+                CartData.total.inCurrentCurrency.formatted=CartData.subTotal.amount+CartData.shippingCost.amount;
+            }
+            return CartData;
+            // console.log('SSSSSSSSSS',CartData);
+            // CartData.shippingCost.amount=50;
+            // CartData.availableShippingMethods.shipping_rate.cost.amount=50;
+            // return CartData;
             // console.log('grr',NewArea);
             // store.state.cart.availableShippingMethods.shipping_rate.cost.inCurrentCurrency.formatted = 35;
-            return 35;
+            // return 35;
         },
 
         // async calculateShippingCost(NewArea) {
