@@ -166,6 +166,29 @@
 
                             <div class="col-md-9">
                                 <div class="form-group">
+                                    <label for="shipping-area">
+                                        {{ trans('checkout::attributes.shipping.area') }}<span>*</span>
+                                    </label>
+
+                                    <select name="shipping[area]" id="shipping-area"
+                                        class="form-control arrow-black"
+                                        @change="changeShippingArea($event.target.value)">
+                                        <option value="">{{ trans('storefront::checkout.please_select') }}
+                                        </option>
+
+                                        <option v-for="(name, code) in countries" :value="code"
+                                            v-text="name">
+                                        </option>
+                                    </select>
+
+                                    <span class="error-message" v-if="errors.has('shipping.area')"
+                                        v-text="errors.get('shipping.area')">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <div class="form-group">
                                     <label for="shipping-state">
                                         {{ trans('checkout::attributes.shipping.state') }}<span>*</span>
                                     </label>

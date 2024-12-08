@@ -1,7 +1,7 @@
 import Errors from "../../../Errors";
 
 export default {
-    props: ["initialAddresses", "initialDefaultAddress", "countries"],
+    props: ["initialAddresses", "initialDefaultAddress", "countries", "areas"],
 
     data() {
         return {
@@ -59,6 +59,10 @@ export default {
             this.fetchStates(country);
         },
 
+        changeArea(area) {
+            this.form.area = area;
+        },
+
         async fetchStates(country) {
             const response = await axios.get(
                 route("countries.states.index", { code: country })
@@ -71,6 +75,7 @@ export default {
             this.formOpen = true;
             this.editing = true;
             this.form = address;
+            console.log(this.form);
 
             this.fetchStates(address.country);
         },

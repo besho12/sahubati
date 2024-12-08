@@ -13,6 +13,7 @@
         :initial-addresses="{{ $addresses }}"
         :initial-default-address="{{ $defaultAddress }}"
         :countries="{{ json_encode($countries) }}"
+        :areas="{{ json_encode($areas) }}"
         inline-template
     >
         <div class="panel">
@@ -191,6 +192,31 @@
 
                                         <span class="error-message" v-if="errors.has('country')"
                                             v-text="errors.get('country')">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="area">
+                                            {{ trans('storefront::account.addresses.area') }}<span>*</span>
+                                        </label>
+
+                                        <select
+                                            :value="form.area"
+                                            name="area"
+                                            id="area"
+                                            class="form-control arrow-black"
+                                            @change="changeArea($event.target.value)"
+                                        >
+                                        
+                                            <option v-for="(name, code) in areas" :value="code" v-text="name">
+                                            </option>
+                                        </select>                                        
+
+                                        <span class="error-message" v-if="errors.has('area')"
+                                            v-text="errors.get('area')">
                                         </span>
                                     </div>
                                 </div>

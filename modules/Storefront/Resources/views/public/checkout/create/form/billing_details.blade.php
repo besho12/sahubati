@@ -144,6 +144,26 @@
 
                 <div class="col-md-9">
                     <div class="form-group">
+                        <label for="billing-area">
+                            {{ trans('checkout::attributes.billing.area') }}<span>*</span>
+                        </label>
+
+                        <select name="billing[area]" id="billing-area" class="form-control arrow-black"
+                            @change="changeBillingArea($event.target.value)">
+                            <option value="">{{ trans('storefront::checkout.please_select') }}</option>
+
+                            <option v-for="(name, code) in countries" :value="code" v-text="name">
+                            </option>
+                        </select>
+
+                        <span class="error-message" v-if="errors.has('billing.area')"
+                            v-text="errors.get('billing.area')">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="form-group">
                         <label for="billing-state">
                             {{ trans('checkout::attributes.billing.state') }}<span>*</span>
                         </label>

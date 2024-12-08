@@ -71,6 +71,7 @@ class NullAddress implements Arrayable
             'address_1' => $this->null,
             'address_2' => $this->null,
             'country' => $this->null,
+            'area' => $this->null,
             'state' => $this->null,
             'city' => $this->null,
             'zip' => $this->null,

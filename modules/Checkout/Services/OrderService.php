@@ -88,6 +88,7 @@ class OrderService
             'state' => $data['state'],
             'zip' => $data['zip'],
             'country' => $data['country'],
+            'area' => $data['area'],
         ];
     }
 

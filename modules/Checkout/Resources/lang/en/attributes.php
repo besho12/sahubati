@@ -9,6 +9,7 @@ return [
         'city' => 'City',
         'zip' => 'Postcode / ZIP',
         'country' => 'Country',
+        'area' => 'Area',
         'state' => 'State / Province',
     ],
     'shipping' => [
@@ -19,6 +20,7 @@ return [
         'city' => 'City',
         'zip' => 'Postcode / ZIP',
         'country' => 'Country',
+        'area' => 'Area',
         'state' => 'State / Province',
     ],
     'street_address' => 'Street Address',

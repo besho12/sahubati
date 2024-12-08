@@ -82,6 +82,7 @@ return [
         'city' => 'City',
         'zip' => 'Postcode / ZIP',
         'country' => 'Country',
+        'area' => 'Area',
         'state' => 'State / Province',
         'please_select' => 'Please Select',
         'cancel' => 'Cancel',

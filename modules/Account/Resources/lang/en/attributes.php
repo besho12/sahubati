@@ -8,6 +8,7 @@ return [
         'city' => 'City',
         'zip' => 'Postcode / ZIP',
         'country' => 'Country',
+        'area' => 'Area',
         'state' => 'State / Province',
     ],
 ];

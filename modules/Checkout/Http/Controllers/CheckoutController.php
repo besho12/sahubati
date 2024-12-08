@@ -30,6 +30,7 @@ use Modules\Order\Http\Requests\StoreOrderRequest;
 use Modules\Coupon\Checkers\UsageLimitPerCustomer;
 use Modules\Cart\Http\Middleware\CheckCartItemsStock;
 use Modules\Cart\Http\Middleware\RedirectIfCartIsEmpty;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class CheckoutController extends Controller
 {
@@ -94,6 +95,7 @@ class CheckoutController extends Controller
         return view('storefront::public.checkout.create', [
             'cart' => Cart::instance(),
             'countries' => Country::supported(),
+            'areas' => ShippingArea::get_shipping_areas(),
             'gateways' => Gateway::all(),
             'defaultAddress' => auth()->user()->defaultAddress ?? new DefaultAddress,
             'addresses' => $this->getAddresses(),

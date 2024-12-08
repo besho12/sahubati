@@ -52,6 +52,7 @@ class StoreAddress implements Arrayable
             'state' => setting('store_state'),
             'zip' => setting('store_zip'),
             'country' => setting('store_country'),
+            'area' => setting('store_area'),
         ];
     }
 }

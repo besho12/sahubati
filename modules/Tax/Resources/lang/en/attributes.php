@@ -5,6 +5,7 @@ return [
     'based_on' => 'Based On',
     'name' => 'Tax Name',
     'country' => 'Country',
+    'area' => 'Area',
     'state' => 'State',
     'city' => 'City',
     'zip' => 'Zip',

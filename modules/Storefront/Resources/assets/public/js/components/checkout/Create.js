@@ -13,6 +13,7 @@ export default {
         "defaultAddress",
         "addresses",
         "countries",
+        "areas",
     ],
 
     data() {
@@ -276,6 +277,10 @@ export default {
             });
         },
 
+        changeBillingArea(area) {
+            this.$set(this.form.billing, "area", area);
+        },
+
         changeShippingCountry(country) {
             this.$set(this.form.shipping, "country", country);
 
@@ -287,6 +292,22 @@ export default {
             }
 
             this.fetchStates(country, (response) => {
+                this.$set(this.states, "shipping", response.data);
+                this.$set(this.form.shipping, "state", "");
+            });
+        },
+
+        changeShippingArea(area) {
+            this.$set(this.form.shipping, "area", area);
+
+            if (area === "") {
+                this.form.shipping.state = "";
+                this.states.shipping = {};
+
+                return;
+            }
+
+            this.fetchStates(area, (response) => {
                 this.$set(this.states, "shipping", response.data);
                 this.$set(this.form.shipping, "state", "");
             });

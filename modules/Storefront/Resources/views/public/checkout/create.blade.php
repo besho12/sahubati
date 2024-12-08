@@ -10,6 +10,7 @@
         :default-address="{{ $defaultAddress }}"
         :gateways="{{ $gateways }}"
         :countries="{{ json_encode($countries) }}"
+        :areas="{{ json_encode($areas) }}"
         inline-template
     >
         <section class="checkout-wrap">

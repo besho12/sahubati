@@ -102,4 +102,21 @@ class ShippingArea extends Model implements Sitemapable
             ->setPriority(0.1);
     }
 
+
+    public static function get_shipping_areas(){
+        $shipping = self::where('is_active', 1)
+        ->with('translations') 
+        ->select(['id', 'slug'])
+        ->get()
+        ->keyBy('slug') 
+        ->toArray();
+
+        $values = [];
+        foreach($shipping as $key=>$single){
+            $values[$key] = $single['name'];
+        }
+
+        return $values;
+    }
+
 }

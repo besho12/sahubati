@@ -22,6 +22,7 @@ class ShippingServiceProvider extends ServiceProvider
         $this->registerFreeShipping();
         $this->registerLocalPickup();
         $this->registerFlatRate();
+        $this->registerShippingRate();
     }
 
 
@@ -59,4 +60,23 @@ class ShippingServiceProvider extends ServiceProvider
             return new Method('flat_rate', setting('flat_rate_label'), setting('flat_rate_cost') ?? 0);
         });
     }
+
+
+    private function registerShippingRate()
+    {
+        if (!setting('shipping_rate_enabled')) {
+            return;
+        }
+
+        $shipping_cost = $this->get_shipping_cost();
+
+        ShippingMethod::register('shipping_rate', function () use($shipping_cost){
+            return new Method('shipping_rate', setting('shipping_rate_label'), $shipping_cost ?? 0);
+        });
+    }
+
+    private function get_shipping_cost(){
+        return '50';
+    }
+    
 }

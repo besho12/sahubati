@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Modules\Account\Entities\Address;
 use Modules\Account\Entities\DefaultAddress;
 use Modules\Account\Http\Requests\SaveAddressRequest;
+use Modules\ShippingArea\Entities\ShippingArea;
 
 class AccountAddressController extends Controller
 {
@@ -16,6 +17,7 @@ class AccountAddressController extends Controller
             'addresses' => auth()->user()->addresses->keyBy('id'),
             'defaultAddress' => auth()->user()->defaultAddress,
             'countries' => Country::supported(),
+            'areas' => ShippingArea::get_shipping_areas(),
         ]);
     }
 
@@ -62,4 +64,6 @@ class AccountAddressController extends Controller
 
         return trans('account::messages.default_address_updated');
     }
+
+
 }
