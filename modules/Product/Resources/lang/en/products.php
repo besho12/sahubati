@@ -80,6 +80,7 @@ return [
 
     'form' => [
         'the_product_won\'t_be_shipped' => 'The product won\'t be shipped',
+        'mark_as_package' => 'Mark as package',
         'enable_the_product' => 'Enable the product',
         'special_price_types' => [
             'fixed' => 'Fixed',
@@ -119,6 +120,7 @@ return [
             'media' => 'Media',
             'sku' => 'SKU',
             'is_active' => 'Status',
+            'is_package' => 'Package',
             'enable_the_variants' => 'Enable the variants',
             'price' => 'Price',
             'special_price' => 'Special Price',

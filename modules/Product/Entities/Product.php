@@ -72,6 +72,7 @@ class Product extends Model implements Sitemapable
         'is_active',
         'new_from',
         'new_to',
+        'is_package',
     ];
 
     /**
@@ -80,6 +81,7 @@ class Product extends Model implements Sitemapable
      * @var array
      */
     protected $casts = [
+        'is_package' => 'boolean',
         'is_virtual' => 'boolean',
         'is_active' => 'boolean',
         'special_price_start' => 'datetime',

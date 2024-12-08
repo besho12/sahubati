@@ -56,6 +56,7 @@ class SaveProductRequest extends Request
                 'new_from' => 'nullable|date',
                 'new_to' => 'nullable|date',
                 'is_virtual' => 'required|boolean',
+                'is_package' => 'required|boolean',
                 'is_active' => 'required|boolean',
             ],
             $this->getInventoryRules()

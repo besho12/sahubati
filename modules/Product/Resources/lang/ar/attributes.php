@@ -11,6 +11,7 @@ return [
     'tags' => 'الوسوم',
     'is_virtual' => 'افتراضي',
     'is_active' => 'الحالة',
+    'is_package' => 'حزمة',
     'price' => 'السعر',
     'special_price' => 'سعر خاص',
     'special_price_type' => 'نوع السعر الخاص',

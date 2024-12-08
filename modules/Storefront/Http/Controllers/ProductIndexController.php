@@ -39,11 +39,30 @@ class ProductIndexController
             ->clean();
     }
 
+    protected function getPackages($settingPrefix)
+    {
+        $type = setting("{$settingPrefix}_product_type", 'custom_products');
+        $limit = setting("{$settingPrefix}_products_limit");
+
+
+        return Product::forCard()
+            ->where('is_package','1')
+            ->when($type === 'latest_products', $this->latestProductsCallback($limit))
+            ->when($type === 'custom_products', $this->customProductsCallback($settingPrefix))
+            ->get()
+            ->map
+            ->clean();
+    }
+
 
     private function categoryProducts($settingPrefix, $limit)
     {
         return Category::findOrNew(setting("{$settingPrefix}_category_id"))
             ->products()
+            ->where(function ($query) {
+                $query->where('is_package','=',null)
+                ->orWhere('is_package','=','0');
+            })
             ->forCard()
             ->take($limit)
             ->get();
@@ -52,7 +71,10 @@ class ProductIndexController
 
     private function recentlyViewedProducts($limit)
     {
-        return collect($this->recentlyViewed->products())
+        return collect($this->recentlyViewed->products()->where(function ($query) {
+            $query->where('is_package','=',null)
+                ->orWhere('is_package','=','0');
+            }))
             ->reverse()
             ->when(!is_null($limit), function (Collection $products) use ($limit) {
                 return $products->take($limit);

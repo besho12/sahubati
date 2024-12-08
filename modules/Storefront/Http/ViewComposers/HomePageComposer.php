@@ -46,6 +46,7 @@ class HomePageComposer
             'oneColumnBanner3' => $this->oneColumnBanner3(),
             'oneColumnBanner4' => $this->oneColumnBanner4(),
             'oneColumnBanner5' => $this->oneColumnBanner5(),
+            'productPackages' => $this->productPackages(),
             'blogPosts' => $this->blogPosts(),
         ]);
     }
@@ -105,6 +106,19 @@ class HomePageComposer
         return Collection::times(4, function ($number) {
             if (!is_null(setting("storefront_product_tabs_1_section_tab_{$number}_product_type"))) {
                 return setting("storefront_product_tabs_1_section_tab_{$number}_title");
+            }
+        })->filter();
+    }
+
+    private function productPackages()
+    {
+        if (!setting('storefront_product_packages_section_enabled')) {
+            return;
+        }
+
+        return Collection::times(4, function ($number) {
+            if (!is_null(setting("storefront_product_packages_section_tab_{$number}_product_type"))) {
+                return setting("storefront_product_packages_section_tab_{$number}_title");
             }
         })->filter();
     }

@@ -14,6 +14,7 @@ import HomeFeatures from "./components/home/HomeFeatures.vue";
 import FeaturedCategories from "./components/home/FeaturedCategories.vue";
 import BannerThreeColumnFullWidth from "./components/home/BannerThreeColumnFullWidth.vue";
 import ProductTabsOne from "./components/home/ProductTabsOne.vue";
+import ProductPackages from "./components/home/ProductPackages.vue";
 import TopBrands from "./components/home/TopBrands.vue";
 import BannerTwoColumn from "./components/home/BannerTwoColumn.vue";
 import ProductGrid from "./components/home/ProductGrid.vue";
@@ -58,6 +59,7 @@ Vue.component("home-features", HomeFeatures);
 Vue.component("featured-categories", FeaturedCategories);
 Vue.component("banner-three-column-full-width", BannerThreeColumnFullWidth);
 Vue.component("product-tabs-one", ProductTabsOne);
+Vue.component("product-packages", ProductPackages);
 Vue.component("top-brands", TopBrands);
 Vue.component("flash-sale-and-vertical-products", () =>
     import("./components/home/FlashSaleAndVerticalProducts.vue")

@@ -81,6 +81,7 @@ return [
     'form' => [
         'the_product_won\'t_be_shipped' => 'لن يتم شحن المنتج',
         'enable_the_product' => 'تفعيل المنتج',
+        'mark_as_package' => 'وضع علامة كحزمة',
         'special_price_types' => [
             'fixed' => 'ثابت',
             'percent' => 'نسبة',
@@ -119,6 +120,7 @@ return [
             'media' => 'الوسائط',
             'sku' => 'SKU',
             'is_active' => 'الحالة',
+            'is_package' => 'حزمة',
             'enable_the_variants' => 'تفعيل المتغيرات',
             'price' => 'السعر',
             'special_price' => 'سعر خاص',

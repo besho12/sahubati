@@ -17,6 +17,7 @@ new Vue({
             tax_class_id: "",
             is_active: true,
             media: [],
+            is_package: false,
             is_virtual: false,
             manage_stock: 0,
             in_stock: 1,
