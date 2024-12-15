@@ -3,6 +3,7 @@
 namespace Modules\Payment\Providers;
 
 use Modules\Payment\Gateways\COD;
+use Modules\Payment\Gateways\PayLink;
 use Modules\Payment\Gateways\Paytm;
 use Modules\Payment\Gateways\Paymob;
 use Modules\Payment\Facades\Gateway;
@@ -47,6 +48,7 @@ class PaymentServiceProvider extends ServiceProvider
         $this->registerPayFast();
         $this->registerIyzico();
         $this->registerCashOnDelivery();
+        $this->registerPayLink();
         $this->registerBankTransfer();
         $this->registerCheckPayment();
     }
@@ -171,6 +173,14 @@ class PaymentServiceProvider extends ServiceProvider
     {
         if ($this->enabled('cod')) {
             Gateway::register('cod', new COD());
+        }
+    }
+
+
+    private function registerPayLink()
+    {
+        if ($this->enabled('paylink')) {
+            Gateway::register('paylink', new PayLink());
         }
     }
 

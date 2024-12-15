@@ -194,6 +194,10 @@ return [
     'translatable.cod_label' => 'التسمية',
     'translatable.cod_description' => 'الوصف',
 
+    'paylink_enabled' => 'الحالة',
+    'translatable.paylink_label' => 'التسمية',
+    'translatable.paylink_description' => 'الوصف',
+
     'bank_transfer_enabled' => 'الحالة',
     'translatable.bank_transfer_label' => 'التسمية',
     'translatable.bank_transfer_description' => 'الوصف',

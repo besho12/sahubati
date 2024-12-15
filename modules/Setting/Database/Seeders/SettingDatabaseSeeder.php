@@ -61,6 +61,8 @@ class SettingDatabaseSeeder extends Seeder
                 'payfast_description' => 'Online Payments In South Africa',
                 'cod_label' => 'Cash On Delivery',
                 'cod_description' => 'Pay with cash upon delivery.',
+                'paylink_label' => 'Pay With Link',
+                'paylink_description' => 'Pay with Link',
                 'bank_transfer_label' => 'Bank Transfer',
                 'bank_transfer_description' => 'Make your payment directly into our bank account. Please use your Order ID as the payment reference.',
                 'check_payment_label' => 'Check / Money Order',

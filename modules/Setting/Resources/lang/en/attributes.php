@@ -194,6 +194,10 @@ return [
     'translatable.cod_label' => 'Label',
     'translatable.cod_description' => 'Description',
 
+    'paylink_enabled' => 'Status',
+    'translatable.paylink_label' => 'Label',
+    'translatable.paylink_description' => 'Description',
+
     'bank_transfer_enabled' => 'Status',
     'translatable.bank_transfer_label' => 'Label',
     'translatable.bank_transfer_description' => 'Description',

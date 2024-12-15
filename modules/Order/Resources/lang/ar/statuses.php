@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'canceled' => 'ملغى',
-    'completed' => 'مكتمل',
-    'on_hold' => 'معلق',
-    'pending' => 'معلق',
     'pending_payment' => 'معلق الدفع',
-    'processing' => 'جارٍ المعالجة',
+    'pending' => 'معلق',
+    'processing' => 'جارٍ الشحن',
+    'completed' => 'مكتمل',
+    'canceled' => 'ملغى',
+    // 'on_hold' => 'معلق',
     'refunded' => 'تم رد المبلغ',
 ];

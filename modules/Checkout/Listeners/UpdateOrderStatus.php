@@ -16,6 +16,8 @@ class UpdateOrderStatus
      */
     public function handle($event)
     {
-        $event->order->update(['status' => Order::PENDING]);
+        if($event->order->getAttributes()['payment_method'] != 'paylink'){
+            $event->order->update(['status' => Order::PENDING]);
+        }
     }
 }

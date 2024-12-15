@@ -61,6 +61,7 @@ class SettingTabs extends Tabs
             ->add($this->payfast())
             ->add($this->iyzico())
             ->add($this->cod())
+            ->add($this->paylink())
             ->add($this->bankTransfer())
             ->add($this->checkPayment());
     }
@@ -519,6 +520,18 @@ class SettingTabs extends Tabs
             $tab->fields(['cod_enabled', 'translatable.cod_label', 'translatable.cod_description']);
 
             $tab->view('setting::admin.settings.tabs.cod');
+        });
+    }
+
+
+    private function paylink()
+    {
+        return tap(new Tab('paylink', trans('setting::settings.tabs.paylink')), function (Tab $tab) {
+            $tab->weight(71);
+
+            $tab->fields(['paylink_enabled', 'translatable.paylink_label', 'translatable.paylink_description']);
+
+            $tab->view('setting::admin.settings.tabs.paylink');
         });
     }
 

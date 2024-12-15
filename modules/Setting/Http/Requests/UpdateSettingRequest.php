@@ -192,6 +192,11 @@ class UpdateSettingRequest extends Request
             'translatable.cod_label' => 'required_if:cod_enabled,1',
             'translatable.cod_description' => 'required_if:cod_enabled,1',
 
+
+            'paylink_enabled' => 'required|boolean',
+            'translatable.paylink_label' => 'required_if:paylink_enabled,1',
+            'translatable.paylink_description' => 'required_if:paylink_enabled,1',
+
             'bank_transfer_enabled' => 'required|boolean',
             'translatable.bank_transfer_label' => 'required_if:bank_transfer_enabled,1',
             'translatable.bank_transfer_description' => 'required_if:bank_transfer_enabled,1',

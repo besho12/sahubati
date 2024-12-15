@@ -28,7 +28,7 @@ class Order extends Model
 
     const CANCELED = 'canceled';
     const COMPLETED = 'completed';
-    const ON_HOLD = 'on_hold';
+    // const ON_HOLD = 'on_hold';
     const PENDING = 'pending';
     const PENDING_PAYMENT = 'pending_payment';
     const PROCESSING = 'processing';
