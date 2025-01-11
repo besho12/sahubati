@@ -66,6 +66,7 @@ class ProductIndexController
             ->forCard()
             ->take($limit)
             ->get();
+            // 
     }
 
 
